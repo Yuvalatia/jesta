@@ -11,7 +11,7 @@ class Home extends React.Component {
 
   render() {
     const DUMMY_JOBS = [
-      {id: '0', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"300", jobOwner: "אבי"},
+      {id: '0', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"301", jobOwner: "אבי"},
       {id: '1', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"300", jobOwner: "אבי"},
       {id: '2', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"300", jobOwner: "אבי"},
       {id: '3', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"300", jobOwner: "אבי"},
