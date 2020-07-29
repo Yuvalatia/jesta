@@ -1,6 +1,5 @@
 import React from "react";
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 import IntroTable from './IntroTable';
@@ -11,10 +10,11 @@ class Home extends React.Component {
 
   render() {
     const DUMMY_JOBS = [
-      {id: '0', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"301", jobOwner: "אבי"},
-      {id: '1', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"300", jobOwner: "אבי"},
-      {id: '2', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"300", jobOwner: "אבי"},
-      {id: '3', description: "פינוי אשפה מגינה", date:"14/2/2020", jobTime:"3", payment:"300", jobOwner: "אבי"},
+      {id: '0', description: "פינוי אשפה מגינה", date:"14/2/2020", location:"אשקלון", payment:"301", owner: "אבי"},
+      {id: '1', description: "פינוי אשפה מגינה", date:"14/2/2020", location:"אשקלון", payment:"300", owner: "אבי"},
+      {id: '2', description: "פינוי אשפה מגינה", date:"14/2/2020", location:"אשקלון", payment:"300", owner: "אבי"},
+      {id: '3', description: "פינוי אשפה מגינה", date:"14/2/2020", location:"אשקלון", payment:"300", owner: "אבי"},
+      {id: '4', description: "פינוי אשפה מגינה", date:"14/2/2020", location:"אשקלון", payment:"300", owner: "אבי"},
     ]
     return (
       <Container fluid>
@@ -27,11 +27,7 @@ class Home extends React.Component {
           </div>        
         </Row>
         <Row className="home__row__table">
-          
-          
-          <IntroTable />
-
-          
+          <IntroTable data={DUMMY_JOBS} />
         </Row>
         <Row>
           <h1>dfdf</h1>
