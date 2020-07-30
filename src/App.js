@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Container from "react-bootstrap/Container";
 
 
 // Pages
@@ -15,7 +14,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <Container>
+      
         <Header />
         <Switch>
           <Route exact path="/">
@@ -28,7 +27,7 @@ function App() {
             <About />
           </Route>
         </Switch>
-      </Container>
+      
     </Router>
   );
 }

@@ -1,9 +1,13 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import FontAwesome from 'react-fontawesome';
+import { withRouter } from "react-router";
+
 
 
 import './IntroTable.css';
-const IntroTable = ({data}) => {
+const IntroTable = ({data, history}) => {
     return(
       <div className="introtable__container">
           <div className="introtable__inner__container">
@@ -19,15 +23,23 @@ const IntroTable = ({data}) => {
           </thead>
           <tbody>
             {data.map((job) => 
-              <tr id={job.id}>
-                <th>{job.owner}</th>
+              <tr key={job.id}>
+                <td>{job.owner}</td>
+                <td>{job.description}</td>
+                <td>{job.location}</td>
+                <td>{job.date}</td>
+                <td>{job.payment}</td>
               </tr>
             )}
           </tbody>
         </Table>
-      </div>             
+      </div>  
+      <Button className="intotable__btn" onClick={() => history.push("/jobs")}>
+        <FontAwesome style={{paddingTop: 3}} name="angle-double-left" />
+        <span>לכל העבודת</span> 
+      </Button>           
     </div>
     );
 }
 
-export default IntroTable;
+export default withRouter(IntroTable);

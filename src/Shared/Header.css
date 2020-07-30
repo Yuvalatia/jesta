@@ -3,11 +3,13 @@
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.48);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.48);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.48);
-  background-color: whitesmoke;
+  background-color: #111623;
+  color: white;
 }
 
 .navbar-brand {
   font-size: 1.65rem;
+  color: white !important;
   /*padding-bottom: 0.4rem;*/
 }
 
@@ -18,14 +20,14 @@
 
 .link {
   text-decoration: none;
-  color: black !important;
+  color: white !important;
   font-weight: bold;
   opacity: 1;
 }
 
 .link:hover {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .navbar-toggler {
@@ -40,7 +42,7 @@
 }
 
 .menu__icon {
-  color: black;
+  color: white;
 }
 
 @media only screen and (max-width: 576px) {
@@ -52,7 +54,7 @@
   }
   .nav-link {
     text-align: right;
-    background-color: greenyellow;
+    background-color: #1e222e;
     padding-right: 10px !important;
     border: none;
     margin-right: 0px;

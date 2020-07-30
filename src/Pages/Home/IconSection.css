@@ -1,0 +1,20 @@
+.iconsection__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.iconsection__icon {
+    font-size: 90px;
+    margin-bottom: 20px;
+    color: #111623;
+}
+.iconsection__container h3 {
+    margin: 0px;
+}
+.iconsection__container p {
+    text-align: center;
+}

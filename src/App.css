@@ -2,7 +2,9 @@
   margin: 0;
   
 }
-
+.main_container{
+  padding: 0px;
+}
 .main_font {
   font-family: 'Secular One', sans-serif;
 }

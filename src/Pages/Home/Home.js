@@ -1,8 +1,10 @@
 import React from "react";
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 import IntroTable from './IntroTable';
+import IconSection from './IconSection';
 import home_intro from '../../Assets/Images/home_intro.jpg';
 
 import "./Home.css";
@@ -17,7 +19,7 @@ class Home extends React.Component {
       {id: '4', description: "פינוי אשפה מגינה", date:"14/2/2020", location:"אשקלון", payment:"300", owner: "אבי"},
     ]
     return (
-      <Container fluid>
+      <Container fluid className="home__container">
         <Row>   
           <img src={home_intro} alt="home intro" className="intro_img" />
         </Row>
@@ -29,8 +31,16 @@ class Home extends React.Component {
         <Row className="home__row__table">
           <IntroTable data={DUMMY_JOBS} />
         </Row>
-        <Row>
-          <h1>dfdf</h1>
+        <Row className="home__row__whyjesta">
+          <Col sm={12} md={4}>
+            <IconSection iconName='money-bill-wave' title='חינם לגמרי' info='מערכת חינמית ללא תשום' />       
+          </Col>
+          <Col sm={12} md={4}>
+            <IconSection iconName='mobile-alt' title='נוחות ונגישות' info='אפליקציה נוחה למשתמש בעלת נגישות מכל מכשיר בכל זמן' />       
+          </Col>
+          <Col sm={12} md={4}>
+            <IconSection iconName='handshake' title='שיתופיות' info='פתרון מהיר לעבודה חד פעמית לעובד ומעביד' />       
+          </Col>
         </Row>
         <Row>
           <h1>dfdf</h1>
