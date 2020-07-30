@@ -25,7 +25,7 @@ class Home extends React.Component {
         </Row>
         <Row>
           <div className="home__container__title">
-            <span>חמשת העבודת החמות</span>
+            <span>לוח עבודות זמינות - אשקלון והסביבה</span>
           </div>        
         </Row>
         <Row className="home__row__table">

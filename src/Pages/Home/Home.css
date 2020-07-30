@@ -8,7 +8,7 @@
 .intro_img {
     width: 100%;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.3), rgba(0,0,0,0));
-    margin-bottom: -560px;
+    margin-bottom: -650px;
     z-index: 1;
     
 }
@@ -19,7 +19,18 @@
     font-family: 'Secular One', sans-serif;
     font-size: 45px;
     font-weight: bold;
-    color: #111623;
+    color: white;
+}
+.home__container__title span {
+    /*-webkit-text-stroke: 0.1px #111623;*/
+    text-shadow:
+   -1px -1px 0 #111623,  
+    1px -1px 0 #111623,
+    -1px 1px 0 #111623,
+     1px 1px 0 #111623;
+    border-radius: 15px;
+    padding: 5px;
+    
 }
 
 .home__row__whyjesta {
