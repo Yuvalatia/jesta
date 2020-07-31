@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 
 import IntroTable from './IntroTable';
 import IconSection from './IconSection';
+import CommentsSlider from './CommentsSlider';
 import home_intro from '../../Assets/Images/home_intro.jpg';
 
 import "./Home.css";
@@ -42,8 +43,8 @@ class Home extends React.Component {
             <IconSection iconName='handshake' title='שיתופיות' info='פתרון מהיר לעבודה חד פעמית לעובד ומעביד' />       
           </Col>
         </Row>
-        <Row>
-          <h1>dfdf</h1>
+        <Row className="home__row__comments">
+          <CommentsSlider />
         </Row>
         <Row>
           <h1>dfdf</h1>

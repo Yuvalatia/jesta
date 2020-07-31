@@ -1,0 +1,16 @@
+.con_item{
+    width: 100%;
+    height: 400px;
+    background-color: #111623;
+    color: white;
+}
+.capcap {
+    background-color: red;
+    align-self: center;
+}
+
+@media  only screen and (max-width: 576px) {
+    .con_item {
+        height: auto;
+    }
+}

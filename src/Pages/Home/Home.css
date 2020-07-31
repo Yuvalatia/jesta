@@ -36,6 +36,9 @@
 .home__row__whyjesta {
     margin-top: 20px;
 }
+.home__row__comments {
+    margin-top: 20px;
+}
 @media only screen and (max-width: 576px) {
     /* mobile look */
     .intro_img {
