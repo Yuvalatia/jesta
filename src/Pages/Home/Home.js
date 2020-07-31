@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import IntroTable from './IntroTable';
 import IconSection from './IconSection';
 import CommentsSlider from './CommentsSlider';
+import ContactForm from './ContactForm';
 import home_intro from '../../Assets/Images/home_intro.jpg';
 
 import "./Home.css";
@@ -34,7 +35,7 @@ class Home extends React.Component {
         </Row>
         <Row className="home__row__whyjesta">
           <Col sm={12} md={4}>
-            <IconSection iconName='money-bill-wave' title='חינם לגמרי' info='מערכת חינמית ללא תשום' />       
+            <IconSection iconName='money-bill-wave' title='חינם לגמרי' info='מערכת חינמית ללא תשלום' />       
           </Col>
           <Col sm={12} md={4}>
             <IconSection iconName='mobile-alt' title='נוחות ונגישות' info='אפליקציה נוחה למשתמש בעלת נגישות מכל מכשיר בכל זמן' />       
@@ -47,11 +48,12 @@ class Home extends React.Component {
           <CommentsSlider />
         </Row>
         <Row>
-          <h1>dfdf</h1>
+            <ContactForm />
         </Row>
-
         <Row>
-          <h1>dfdf</h1>
+          <div style={{backgroundColor: '#505864'}}>
+            <h1>dfsdfs</h1>
+          </div>
         </Row>
         <Row>
           <h1>dfdf</h1>
