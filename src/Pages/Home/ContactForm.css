@@ -21,20 +21,41 @@
 .contactform__container form * {
     width: 100%;
     text-align: right;
+    
 }
 .contactform__container form h2 {
     text-align: center;
+}
+.contactform__container form .contact__icon {
+    text-align: center;
+    font-size: 32px;
+    padding: 9px 8px;
+    background-color: white;
+    width: auto;
+    border-radius: 100px;
+    color: #1e222e;
 }
 .contactform__container form label {
     margin-bottom: 0px;
 }
 .contactform__container form input {
     height: 40px;
+    color: #1e222e;
 }
 .contactform__container form textarea {
     height: 70px;
 }
-
+.contactform__container form button {
+    margin-top: 20px;
+    height: 40px;
+    border: none;
+    text-align: center;
+    font-size: 22px;
+}
+.contactform__container form *:focus {
+    outline: none;
+    box-shadow: none;
+}
 @media only screen and (max-width: 576px) {
     .contactform__container form {
         width: 80%;
