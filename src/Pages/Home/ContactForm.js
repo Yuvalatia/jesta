@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import FontAwesome from 'react-fontawesome';
+
 
 import './ContactForm.css';
 const ContactForm = (props) => {
@@ -8,6 +8,7 @@ const ContactForm = (props) => {
         email: '',
         content: '',
     });
+    
 
     const formSent = (e) => {
         e.preventDefault(); // dosent refresh
@@ -26,7 +27,6 @@ const ContactForm = (props) => {
             <div className="contactform__container">
                 <form onSubmit={formSent}>
                     <h2>דבר איתנו</h2>
-                    <FontAwesome className="contact__icon" name="file-signature" />
                     <label>שם מלא</label>
                     <input value={form.name} name='name' onChange={inputChangeHandler} />
                     <label>דוא"ל</label>

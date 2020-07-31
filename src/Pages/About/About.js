@@ -4,7 +4,7 @@ import "./About.css";
 class About extends React.Component {
   render() {
     return (
-      <div>
+      <div className='about__container'>
         im About
       </div>
     );

@@ -9,12 +9,12 @@ import About from "./Pages/About/About";
 
 // Global Commponents
 import Header from "./Shared/Header";
+import Footer from './Shared/Footer';
 
 import "./App.css";
 function App() {
   return (
     <Router>
-      
         <Header />
         <Switch>
           <Route exact path="/">
@@ -27,7 +27,7 @@ function App() {
             <About />
           </Route>
         </Switch>
-      
+        <Footer />
     </Router>
   );
 }

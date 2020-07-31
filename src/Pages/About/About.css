@@ -1,0 +1,5 @@
+.about__container {
+    background-color: #dfe0e1;
+    z-index: -200;
+    min-height: 100vh;
+}

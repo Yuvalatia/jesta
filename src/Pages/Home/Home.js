@@ -50,53 +50,6 @@ class Home extends React.Component {
         <Row>
             <ContactForm />
         </Row>
-        <Row>
-          <div style={{backgroundColor: '#505864'}}>
-            <h1>dfsdfs</h1>
-          </div>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
-        <Row>
-          <h1>dfdf</h1>
-        </Row>
       </Container>
     );
   }

@@ -26,15 +26,6 @@
 .contactform__container form h2 {
     text-align: center;
 }
-.contactform__container form .contact__icon {
-    text-align: center;
-    font-size: 32px;
-    padding: 9px 8px;
-    background-color: white;
-    width: auto;
-    border-radius: 100px;
-    color: #1e222e;
-}
 .contactform__container form label {
     margin-bottom: 0px;
 }
