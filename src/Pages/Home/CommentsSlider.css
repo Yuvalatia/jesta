@@ -1,16 +1,49 @@
-.con_item{
-    width: 100%;
-    height: 400px;
-    background-color: #111623;
-    color: white;
-}
-.capcap {
-    background-color: red;
-    align-self: center;
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 15%;
+    padding-bottom: 0;
 }
 
+.con_item{
+    width: 100%;
+    height: 300px;
+    background-color: #111623;
+    color: white;
+    font-family: 'Secular One', sans-serif;
+}
+.con_item p {
+    color: rgba(255, 255, 255, 0.685);
+    
+}
+.con_item h1::before {
+    content: '" ';
+    
+}
+.con_item h1::after {
+    content: ' "';
+    
+}
 @media  only screen and (max-width: 576px) {
     .con_item {
-        height: auto;
+       height: 200px;
+    }
+    .carousel-caption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        padding-bottom: 0;
+    }
+    .con_item h1 {
+        font-size: 16px;
+        white-space: nowrap;
+        padding-bottom: 2px;
+    }
+    .con_item p {
+        margin-bottom: 2px;
     }
 }
