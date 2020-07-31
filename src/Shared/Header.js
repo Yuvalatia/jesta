@@ -7,7 +7,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <Navbar sticky="top" expand="sm">
-      <Navbar.Brand className='main_font'>ג'סטה <i class="fas fa-suitcase"></i></Navbar.Brand>
+      <Navbar.Brand className='main_font'><Link to={"/"} className="link">ג'סטה <i class="fas fa-suitcase"></i></Link></Navbar.Brand>
       <Navbar.Toggle
         children={<i className="fas fa-align-left menu__icon"></i>}
         aria-controls="navbar-items"
