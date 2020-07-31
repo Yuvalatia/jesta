@@ -35,6 +35,7 @@
 }
 .contactform__container form textarea {
     height: 70px;
+    color: #1e222e;
 }
 .contactform__container form button {
     margin-top: 20px;
@@ -42,6 +43,7 @@
     border: none;
     text-align: center;
     font-size: 22px;
+    color: #1e222e;
 }
 .contactform__container form *:focus {
     outline: none;
