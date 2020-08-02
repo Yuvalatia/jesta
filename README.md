@@ -1,1 +1,4 @@
-JESTA - here we go
+JESTA
+MERN Application 
+----------------------
+
