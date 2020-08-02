@@ -11,8 +11,12 @@ const JobsContainer = (props) => {
                 <JobAccordion 
                     key={job.id} 
                     id={job.id} 
-                    desc={job.description} 
+                    description={job.description} 
                     location={job.location}  
+                    image={job.image}
+                    date={job.date}
+                    payment={job.payment}
+                    ownerId={job.ownerId}
                 />
             )}
         </Accordion>
