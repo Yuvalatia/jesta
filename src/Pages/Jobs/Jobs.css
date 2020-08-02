@@ -2,4 +2,12 @@
     background-color: #dfe0e1;
     z-index: -200;
     min-height: 100vh;
+    padding-top: 20px;
+}
+.jobs__filter__container {
+   background-color: white;
+   border-radius: 5px;
+}
+.jobs__results__container {
+    margin-top: 10px;
 }
