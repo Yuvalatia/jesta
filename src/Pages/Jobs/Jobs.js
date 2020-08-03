@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import FiltersContainer from './FiltersContainer';
 import JobsContainer from './JobsContainer';
 
 import "./Jobs.css";
@@ -18,10 +19,10 @@ class Jobs extends React.Component {
     return (
       <div className='jobs__container'>
         <Container>
-        <Row className="jobs__filter__container">
-          <Col>חפש לפי שם</Col>
-          <Col>חפש לפי שם</Col>
-          <Col>חפש לפי שם</Col>
+        <Row>
+          <Col>
+            <FiltersContainer />
+          </Col>
         </Row>
         <Row className="jobs__results__container"> 
           <Col>
