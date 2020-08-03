@@ -9,6 +9,7 @@ const JobsContainer = (props) => {
         <Accordion defaultActiveKey={props.data[0].id}>
             {props.data.map((job) => 
                 <JobAccordion 
+                    isOpen={props.data[0].id === job.id}
                     key={job.id} 
                     id={job.id} 
                     description={job.description} 
