@@ -9,7 +9,7 @@ import "./Jobs.css";
 class Jobs extends React.Component {
   render() {
     const DUMMY_JOBS = [
-      {id: '8', description: "פינוי אשפה מגינה",image:'', date:"14/2/2020", location:"אשקלון", payment:"301", ownerId: "1"},
+      {id: '8', description: " פינוי אשפה מגמאוד מאוד מאודמ ואינה",image:'', date:"14/2/2020", location:"אשקלון", payment:"301", ownerId: "1"},
       {id: '14', description: "פינוי אשפה מגינה",image:'', date:"14/2/2020", location:"אשקלון", payment:"300", ownerId: "2"},
       {id: '2', description: "פינוי אשפה מגינה",image:'', date:"14/2/2020", location:"אשקלון", payment:"300", ownerId: "3"},
       {id: '3', description: "פינוי אשפה מגינה",image:'', date:"14/2/2020", location:"אשקלון", payment:"300", ownerId: "4"},

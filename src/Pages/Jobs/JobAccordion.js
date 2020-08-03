@@ -19,10 +19,27 @@ const JobAccordion = (props) => {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey={props.id}>
                 <Card.Body className='jonaccordion__body__container'>
-                    <div>
-                        
+                    <div className='jonaccordion__body__details'>
+                        <div className='jonaccordion__body__details__col'>
+                            <div>
+                                <p className='details__title'>מספר עבודה</p>
+                                <p className='details__content'>#{props.id}447283748</p>
+                            </div>
+                            <div><input /></div>
+                            
+                        </div>
+                        <div className='jonaccordion__body__details__col'>
+                            <div>
+                                <p className='details__title'>מיקום עבודה</p>
+                                <p className='details__content'>{props.location}</p>
+                            </div>
+                            <div>
+                                <p className='details__title'>תשלום</p>
+                                <p className='details__content'>#{props.payment}</p>
+                            </div>
+                        </div>
                     </div>
-                    <Image src={no_image} width={150} thumbnail />
+                    <Image className='jonaccordion__body__img' src={no_image} thumbnail />
                 </Card.Body>
             </Accordion.Collapse>
         </Card>
