@@ -14,11 +14,8 @@ const Header = () => {
       />
       <Navbar.Collapse id="navbar-items">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to={"/"} className="link">
-            הרשם
-          </Nav.Link>
-          <Nav.Link as={Link} to={"/"} className="link">
-            התחבר
+          <Nav.Link as={Link} to={"/auth"} className="link">
+            הרשם / התחבר
           </Nav.Link>
         </Nav>
         <Nav>

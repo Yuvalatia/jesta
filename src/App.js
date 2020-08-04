@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Jobs from "./Pages/Jobs/Jobs";
 import About from "./Pages/About/About";
+import Auth from './Pages/Auth/Auth';
 
 // Global Commponents
 import Header from "./Shared/Header";
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path="/about">
             <About />
+          </Route>
+          <Route exact path="/auth">
+            <Auth />
           </Route>
         </Switch>
         <Footer />
