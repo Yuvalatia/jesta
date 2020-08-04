@@ -1,5 +1,44 @@
 .auth__container {
-    background-color: #dfe0e1;
-    z-index: -200;
-    min-height: 100vh;
+  background-color: #dfe0e1;
+  z-index: -200;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+.auth__card__container {
+  margin-top: 20px;
+}
+.auth__card__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.auth__card__body * {
+  text-align: right;
+}
+.auth__card__body form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+  font-family: "Secular One", sans-serif;
+  width: 100%;
+}
+.auth__card__body form label {
+  margin-bottom: 0px;
+}
+
+.auth__card__body form input {
+  height: 40px;
+  color: #1e222e;
+}
+
+.auth__card__body form button {
+  margin-top: 20px;
+  height: 40px;
+  border: none;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+  background-color: #1e222e;
 }
