@@ -1,0 +1,48 @@
+.profile__container {
+  background-color: white;
+  z-index: -200;
+  min-height: 100vh;
+}
+.profile__container .container {
+  height: 100%;
+}
+.profile__inner__container {
+  background-color: white;
+  border-radius: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.profile__inner__container h2 {
+  text-align: right;
+  padding: 10px;
+  padding-right: 20px;
+}
+.profile__inner__container .nav {
+  flex-direction: row-reverse;
+  padding-right: 0px;
+}
+.nav-tabs a {
+  color: #111623;
+}
+.nav-tabs a.active {
+  color: #111623;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 576px) {
+  .profile__inner__container .nav-link {
+    text-align: right;
+    background-color: white;
+    padding-right: 10px !important;
+    margin-right: 0px;
+  }
+  .profile__inner__container .nav-link:focus {
+    border: none;
+  }
+  .nav-tabs .nav-item {
+    margin-bottom: 0px;
+  }
+  .profile__inner__container h2 {
+    padding-right: 10px;
+  }
+}
