@@ -32,6 +32,16 @@
   height: 40px;
   color: #1e222e;
 }
+.auth__card__body form input[type="checkbox"] {
+  width: 15px;
+  margin-left: 10px;
+}
+.auth__card__body__terms {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
 .auth__card__body form button {
   margin-top: 20px;

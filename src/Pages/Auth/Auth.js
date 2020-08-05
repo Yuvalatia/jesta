@@ -141,12 +141,15 @@ class Auth extends React.Component {
                       name="phone"
                       onChange={this.RegisterInputChangeHandler}
                     />
-                    <input
-                      name="terms"
-                      type="checkbox"
-                      checked={this.state.register_form.terms}
-                      onChange={this.RegisterInputChangeHandler}
-                    />
+                    <div className="auth__card__body__terms">
+                      <span>מאשר את התקנון</span>
+                      <input
+                        name="terms"
+                        type="checkbox"
+                        checked={this.state.register_form.terms}
+                        onChange={this.RegisterInputChangeHandler}
+                      />
+                    </div>
                     <button type="submit">הרשם</button>
                   </form>
                 </Card.Body>
