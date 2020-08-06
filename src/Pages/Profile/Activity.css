@@ -1,0 +1,8 @@
+.activity__container {
+  width: 100%;
+  text-align: right;
+}
+.activity__jobstable {
+  direction: rtl;
+  white-space: nowrap;
+}

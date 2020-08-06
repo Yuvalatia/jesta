@@ -12,10 +12,16 @@
   padding-left: 0px;
   padding-right: 0px;
 }
-.profile__inner__container h2 {
-  text-align: right;
-  padding: 10px;
-  padding-right: 20px;
+.profile__header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.profile__header h2 {
+  display: inline;
 }
 .profile__inner__container .nav {
   flex-direction: row-reverse;
@@ -36,13 +42,18 @@
     padding-right: 10px !important;
     margin-right: 0px;
   }
-  .profile__inner__container .nav-link:focus {
+  .profile__inner__container .nav-tabs:focus {
+    outline: none;
+    box-shadow: none;
     border: none;
   }
   .nav-tabs .nav-item {
     margin-bottom: 0px;
   }
-  .profile__inner__container h2 {
-    padding-right: 10px;
+  .profile__header {
+    padding: 10px;
+  }
+  .profile__header h2 {
+    font-size: 22px;
   }
 }
