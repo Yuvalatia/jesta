@@ -1,0 +1,12 @@
+.paging__container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 576px) {
+  /* phone */
+  .paging__container {
+    overflow: hidden;
+  }
+}
