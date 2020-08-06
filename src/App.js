@@ -33,6 +33,10 @@ function App() {
         <Route exact path="/profile">
           <Profile />
         </Route>
+        {/* Route not found */}
+        <Route path="/">
+          <Home />
+        </Route>
       </Switch>
       <Footer />
     </Router>
