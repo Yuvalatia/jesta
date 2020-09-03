@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FontAwesome from "react-fontawesome";
 import Container from "react-bootstrap/Container";
 
-import "./Auth.css";
+import UserContext from "../../context/UserContext";
+import { userLogin } from "../../services/user.service";
 
+import "./Auth.css";
 const Auth = (props) => {
+  const history = useHistory();
+  const { userData, setUserData } = useContext(UserContext);
+
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
@@ -22,9 +28,16 @@ const Auth = (props) => {
     terms: false,
   });
 
-  const LoginFormSent = (e) => {
+  const LoginFormSent = async (e) => {
     e.preventDefault();
-    console.log(loginForm);
+    try {
+      const response = await userLogin(loginForm);
+      localStorage.setItem("token", response.token);
+      setUserData({ token: response.token, user: response.user });
+      history.push("/profile");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const LoginInputChangeHandler = (e) => {
