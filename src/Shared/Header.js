@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import FontAwesome from "react-fontawesome";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
@@ -7,7 +8,16 @@ import UserContext from "../context/UserContext";
 
 import "./Header.css";
 const Header = () => {
+  const history = useHistory();
   const { userData, setUserData } = useContext(UserContext);
+
+  const logOutHandler = () => {
+    setUserData({ token: null, user: null });
+    if (localStorage.getItem("token")) {
+      localStorage.removeItem("token");
+    }
+    history.push("/");
+  };
 
   return (
     <Navbar sticky="top" expand="sm">
@@ -23,9 +33,14 @@ const Header = () => {
       <Navbar.Collapse id="navbar-items">
         <Nav className="mr-auto">
           {userData.user ? (
-            <Nav.Link as={Link} to={"/profile"} className="link">
-              {userData.user.fullname} ,שלום
-            </Nav.Link>
+            <React.Fragment>
+              <Nav.Link onClick={() => logOutHandler()} className="link">
+                התנתק <FontAwesome name="sign-out-alt" />
+              </Nav.Link>
+              <Nav.Link as={Link} to={"/profile"} className="link">
+                {userData.user.fullname} ,שלום
+              </Nav.Link>
+            </React.Fragment>
           ) : (
             <Nav.Link as={Link} to={"/auth"} className="link">
               הרשם / התחבר
