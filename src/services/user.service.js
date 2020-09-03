@@ -27,3 +27,18 @@ export const userLogin = async (credentials) => {
     throw err;
   }
 };
+
+export const userRegister = async (registerDetails) => {
+  const { fullname, birth, email, password, phone, image } = registerDetails;
+  const newUser = { fullname, birth, email, password, phone, image };
+  try {
+    await Axios.post(
+      process.env.REACT_APP_BACKEND_URL_USERS + "/register",
+      newUser,
+      {}
+    );
+    return await userLogin({ email, password });
+  } catch (err) {
+    throw err;
+  }
+};

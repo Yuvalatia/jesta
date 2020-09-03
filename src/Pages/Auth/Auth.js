@@ -10,7 +10,7 @@ import UserContext from "../../context/UserContext";
 // Hooks
 import useGlobalLoader from "../../hooks/global-loader";
 // Services
-import { userLogin } from "../../services/user.service";
+import { userLogin, userRegister } from "../../services/user.service";
 
 import "./Auth.css";
 const Auth = (props) => {
@@ -23,12 +23,13 @@ const Auth = (props) => {
   });
   const [registerForm, setRegisterForm] = useState({
     fullname: "",
-    date: "",
+    birth: "",
     email: "",
     password: "",
     re_password: "",
     phone: "",
     terms: false,
+    image: "",
   });
 
   // redirect if user is logged in
@@ -57,10 +58,20 @@ const Auth = (props) => {
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
   };
 
-  const RegisterFormSent = (e) => {
+  const RegisterFormSent = async (e) => {
     e.preventDefault();
-    console.log(registerForm);
+    /*     console.log(registerForm); */
     showLoader();
+    try {
+      const response = await userRegister(registerForm);
+      localStorage.setItem("token", response.token);
+      setUserData({ token: response.token, user: response.user });
+      hideLoader();
+      history.push("/profile");
+    } catch (err) {
+      console.log(err);
+      hideLoader();
+    }
   };
 
   const RegisterInputChangeHandler = (e) => {
@@ -127,7 +138,7 @@ const Auth = (props) => {
                     <input
                       type="date"
                       value={registerForm.date}
-                      name="date"
+                      name="birth"
                       onChange={RegisterInputChangeHandler}
                     />
                     <label>דוא"ל</label>
