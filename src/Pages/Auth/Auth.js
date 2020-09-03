@@ -61,15 +61,6 @@ const Auth = (props) => {
       [e.target.name]:
         e.target.name === "terms" ? !registerForm.terms : e.target.value,
     });
-    /* this.setState({
-      register_form: {
-        ...this.state.register_form,
-        [e.target.name]:
-          e.target.name === "terms"
-            ? !this.state.register_form.terms
-            : e.target.value,
-      },
-    }); */
   };
 
   return (
