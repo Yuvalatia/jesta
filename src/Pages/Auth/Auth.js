@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
@@ -13,7 +13,6 @@ import "./Auth.css";
 const Auth = (props) => {
   const history = useHistory();
   const { userData, setUserData } = useContext(UserContext);
-
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
@@ -26,6 +25,13 @@ const Auth = (props) => {
     re_password: "",
     phone: "",
     terms: false,
+  });
+
+  // redirect if user is logged in
+  useEffect(() => {
+    if (userData.user) {
+      history.push("/");
+    }
   });
 
   const LoginFormSent = async (e) => {

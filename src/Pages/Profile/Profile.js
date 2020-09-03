@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Container from "react-bootstrap/Container";
@@ -8,8 +9,20 @@ import Button from "react-bootstrap/Button";
 
 import Activity from "./Activity";
 
+import UserContext from "../../context/UserContext";
+
 import "./Profile.css";
 const Profile = (props) => {
+  const { userData } = useContext(UserContext);
+  const history = useHistory();
+
+  // redirect if user is'nt logged in
+  useEffect(() => {
+    if (!userData.user) {
+      history.push("/");
+    }
+  });
+
   return (
     <div className="profile__container">
       <Container fluid>
