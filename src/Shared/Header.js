@@ -23,7 +23,7 @@ const Header = () => {
     <Navbar sticky="top" expand="sm">
       <Navbar.Brand className="main_font">
         <Link to={"/"} className="link">
-          ג'סטה <i class="fas fa-suitcase"></i>
+          ג'סטה <FontAwesome name="suitcase" />
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle
