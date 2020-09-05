@@ -31,7 +31,7 @@ const Profile = (props) => {
           <Col sm={12} className="profile__inner__container">
             <div className="profile__header">
               <Button variant="warning">פרסם עבודה</Button>
-              <h2>שלום, יובל עטיה</h2>
+              <h2>{userData.user && userData.user.fullname}, שלום</h2>
             </div>
             <Tabs defaultActiveKey="activity" id="uncontrolled-tab-example">
               <Tab eventKey="activity" title="פעילות חשבון">
