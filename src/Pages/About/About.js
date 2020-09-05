@@ -1,15 +1,14 @@
 import React from "react";
-import GlobalLoading from "../../Shared/GlobalLoading";
+import useErrorHandler from "../../hooks/error-handler";
 
 import "./About.css";
 const About = (props) => {
+  const [error, showError] = useErrorHandler();
   return (
     <div className="about__container">
-      <GlobalLoading />
+      {error}
       im About
-      <button onClick={() => console.log(process.env.REACT_APP_BACKEND_URL)}>
-        df
-      </button>
+      <button onClick={() => showError("דניאל שר")}>df</button>
       <p>cv{process.env.REACT_APP_BACKEND_URL}</p>
     </div>
   );
