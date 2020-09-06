@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -7,75 +7,60 @@ import FiltersContainer from "./FiltersContainer";
 import JobsContainer from "./JobsContainer";
 import Paging from "../../Shared/Paging";
 
+// Context
+import UserContext from "../../context/UserContext";
+// Hooks
+import useGlobalLoader from "../../hooks/global-loader";
+import useErrorHandler from "../../hooks/error-handler";
+
 import "./Jobs.css";
 const Jobs = (props) => {
-  const DUMMY_JOBS = [
-    {
-      id: "8",
-      description: " פינוי אשפה מגמאוד מאוד מאודמ ואינה",
-      image: "",
-      date: "14/2/2020",
-      location: "אשקלון",
-      payment: "301",
-      ownerId: "1",
-    },
-    {
-      id: "14",
-      description: "פינוי אשפה מגינה",
-      image: "",
-      date: "14/2/2020",
-      location: "אשקלון",
-      payment: "300",
-      ownerId: "2",
-    },
-    {
-      id: "2",
-      description: "פינוי אשפה מגינה",
-      image: "",
-      date: "14/2/2020",
-      location: "אשקלון",
-      payment: "300",
-      ownerId: "3",
-    },
-    {
-      id: "3",
-      description: "פינוי אשפה מגינה",
-      image: "",
-      date: "14/2/2020",
-      location: "אשקלון",
-      payment: "300",
-      ownerId: "4",
-    },
-    {
-      id: "4",
-      description: "פינוי אשפה מגינה",
-      image: "",
-      date: "14/2/2020",
-      location: "אשקלון",
-      payment: "300",
-      ownerId: "5",
-    },
-  ];
+  const [jobs, setJobs] = useState([]);
+  const { userData } = useContext(UserContext);
+  const [loading, showLoader, hideLoader] = useGlobalLoader();
+  const [error, showError] = useErrorHandler();
+
+  useEffect(() => {
+    const fetchJobsFromServer = async () => {
+      showLoader();
+      try {
+        const response = await fetch(process.env.REACT_APP_BACKEND_URL_JOBS);
+        const allJobs = await response.json();
+        setJobs(allJobs);
+        hideLoader();
+      } catch (err) {
+        showError(err.response.data.message);
+        hideLoader();
+      }
+    };
+    fetchJobsFromServer();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
-    <div className="jobs__container">
-      <Container>
-        <Row>
-          <Col>
-            <FiltersContainer />
-          </Col>
-        </Row>
-        <Row className="jobs__results__container">
-          <Col>
-            <JobsContainer data={DUMMY_JOBS} />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Paging />
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <React.Fragment>
+      {error}
+      {loading}
+
+      <div className="jobs__container">
+        <Container>
+          <Row>
+            <Col>
+              <FiltersContainer />
+            </Col>
+          </Row>
+          <Row className="jobs__results__container">
+            <Col>
+              <JobsContainer data={jobs} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Paging />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </React.Fragment>
   );
 };
 
