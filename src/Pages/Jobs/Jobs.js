@@ -58,17 +58,18 @@ const Jobs = (props) => {
   const sendApplicationToJob = async (jobId) => {
     if (!userData.token || !userData.user) {
       showError("יש להתחבר בכדי להגיש מועמדות לעבודה");
+      return false;
+    } else {
+      try {
+        await sentApplicationToJob(userData.token, jobId);
+        return true; // to small component to know it succsees
+      } catch (err) {
+        err.response
+          ? showError(err.response.data.message)
+          : showError("אנא נסה מאוחר יותר");
+      }
+      return false;
     }
-
-    try {
-      await sentApplicationToJob(userData.token, jobId);
-      return true; // to small component to know it succsees
-    } catch (err) {
-      err.response
-        ? showError(err.response.data.message)
-        : showError("אנא נסה מאוחר יותר");
-    }
-    return false;
   };
   return (
     <React.Fragment>
