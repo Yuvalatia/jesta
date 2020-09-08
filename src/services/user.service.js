@@ -42,3 +42,15 @@ export const userRegister = async (registerDetails) => {
     throw err;
   }
 };
+
+export const sentApplicationToJob = async (token, jobId) => {
+  try {
+    await Axios.post(
+      process.env.REACT_APP_BACKEND_URL_USERS + "/assginToJob",
+      { jobId: jobId },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+  } catch (err) {
+    throw err;
+  }
+};

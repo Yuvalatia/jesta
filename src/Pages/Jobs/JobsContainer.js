@@ -18,6 +18,8 @@ const JobsContainer = (props) => {
           date={job.date}
           payment={job.payment}
           ownerId={job.ownerId}
+          isAssinged={job.isAssinged}
+          sendApplication={props.sendApplication}
         />
       ))}
     </Accordion>

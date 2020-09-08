@@ -32,6 +32,7 @@ function App() {
         const token = localStorage.getItem("token"); // user token
         try {
           const response = await getUserDetailsByToken(token);
+
           setUserData({ token, user: response.user });
         } catch (err) {
           if (err.response.data.message) {
