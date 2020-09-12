@@ -34,6 +34,21 @@
   color: #111623;
   font-weight: bold;
 }
+.profile__userStats {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+.profile__userStats .userImg {
+  width: 250px;
+  margin-bottom: 10px;
+}
+.profile__userStats .title {
+  margin-top: 15px;
+}
+.profile__userStats .details {
+  color: #7b7f88;
+}
 
 @media only screen and (max-width: 576px) {
   .profile__inner__container .nav-link {

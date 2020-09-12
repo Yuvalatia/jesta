@@ -7,7 +7,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-import Activity from "./Activity";
+/* import Activity from "./Activity";
+ */ import Myjobs from "./Myjobs";
+
+import DefaultUserPicture from "../../Assets/Images/default_user_picture.png";
 
 import UserContext from "../../context/UserContext";
 
@@ -34,14 +37,30 @@ const Profile = (props) => {
               <h2>{userData.user && userData.user.fullname}, שלום</h2>
             </div>
             <Tabs defaultActiveKey="activity" id="uncontrolled-tab-example">
-              <Tab eventKey="activity" title="פעילות חשבון">
-                <Activity />
+              <Tab eventKey="activity" title="פרופיל משתמש">
+                <div className="profile__userStats main_font">
+                  <img
+                    src={DefaultUserPicture}
+                    alt="user default"
+                    className="userImg"
+                  />
+                  <h2>{userData.user && userData.user.fullname}</h2>
+                  <h4 className="title">אימייל</h4>
+                  <span className="details">
+                    {userData.user && userData.user.email}
+                  </span>
+                  <h4 className="title">תאריך לידה</h4>
+                  <span className="details">
+                    {userData.user && userData.user.birth}
+                  </span>
+                  <h4 className="title">פלאפון</h4>
+                  <span className="details">
+                    {userData.user && userData.user.phone}
+                  </span>
+                </div>
               </Tab>
               <Tab eventKey="myjobs" title="העבודות שלי">
-                hi there
-              </Tab>
-              <Tab eventKey="details" title="פרטים אישיים">
-                hi there
+                <Myjobs />
               </Tab>
             </Tabs>
           </Col>
