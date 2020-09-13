@@ -49,6 +49,47 @@
 .profile__userStats .details {
   color: #7b7f88;
 }
+.modal-title {
+  width: 100%;
+  text-align: right;
+  margin-right: 10px;
+}
+.modal-header {
+  flex-direction: row-reverse;
+}
+.modal-body * {
+  text-align: right;
+}
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+  font-family: "Secular One", sans-serif;
+  width: 100%;
+}
+.modal-body form label {
+  margin-bottom: 0px;
+}
+
+.modal-body form input {
+  height: 40px;
+  color: #1e222e;
+  margin-top: 3px;
+}
+/* input[type="date"] {
+  padding: 1px 2px;
+
+} */
+.modal-body form button {
+  margin-top: 20px;
+  height: 40px;
+  border: none;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+  background-color: #1e222e;
+}
 
 @media only screen and (max-width: 576px) {
   .profile__inner__container .nav-link {
