@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Spinner from "react-bootstrap/Spinner";
 import Modal from "react-bootstrap/Modal";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
@@ -8,16 +9,22 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-/* import Activity from "./Activity";
- */ import Myjobs from "./Myjobs";
-
+import Myjobs from "./Myjobs";
 import DefaultUserPicture from "../../Assets/Images/default_user_picture.png";
 
+// Service
+import { addNewJob } from "../../services/user.service";
+// Hooks
+import useErrorHandler from "../../hooks/error-handler";
+// Context
 import UserContext from "../../context/UserContext";
 
 import "./Profile.css";
 const Profile = (props) => {
+  const [error, showError] = useErrorHandler();
+  const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [newJobSent, setNewJobSent] = useState(false);
   const [newJobForm, setNewJobForm] = useState({
     description: "",
     date: "",
@@ -34,13 +41,37 @@ const Profile = (props) => {
     }
   });
 
+  const closeModal = () => {
+    setNewJobForm({
+      description: "",
+      date: "",
+      location: "",
+      payment: 50,
+    });
+    setShowModal(!showModal);
+    setLoading(false);
+    setNewJobSent(false);
+  };
+
   const NewJobInputChangeHandler = (e) => {
-    setNewJobForm({ ...newJobForm, [e.target.name]: e.target.value });
+    setNewJobForm({
+      ...newJobForm,
+      [e.target.name]:
+        e.target.name === "payment" ? parseInt(e.target.value) : e.target.value,
+    });
   };
 
   const newJobFormSent = async (e) => {
     e.preventDefault();
-    console.log(newJobForm);
+    setLoading(true);
+    try {
+      await addNewJob(userData.token, newJobForm);
+      setNewJobSent(true);
+      setLoading(false);
+    } catch (err) {
+      showError(err.response.data.message);
+      setLoading(false);
+    }
   };
 
   return (
@@ -89,53 +120,64 @@ const Profile = (props) => {
           </Row>
         </Container>
       </div>
-      <Modal show={showModal} onHide={() => setShowModal(!showModal)}>
+      <Modal show={showModal} onHide={() => closeModal()}>
         <Modal.Header closeButton>
           <Modal.Title>פרסם עבודה</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form onSubmit={newJobFormSent}>
-            <label>תיאור</label>
-            <input
-              type="text"
-              value={newJobForm.description}
-              name="description"
-              onChange={NewJobInputChangeHandler}
-            />
-            <label>תאריך</label>
-            <input
-              type="date"
-              value={newJobForm.date}
-              name="date"
-              onChange={NewJobInputChangeHandler}
-            />
-            <label>מיקום</label>
-            <input
-              type="text"
-              value={newJobForm.location}
-              name="location"
-              onChange={NewJobInputChangeHandler}
-            />
-            <label>(מחיר (שקל</label>
-            <input
-              type="number"
-              value={newJobForm.payment}
-              name="payment"
-              onChange={NewJobInputChangeHandler}
-            />
-
-            <button type="submit">הרשם</button>
-          </form>
+          {newJobSent ? (
+            <p className="jobSent__messageText">עבודה פורסמה בהצלחה</p>
+          ) : (
+            <form onSubmit={newJobFormSent}>
+              <label>תיאור</label>
+              <input
+                type="text"
+                value={newJobForm.description}
+                name="description"
+                onChange={NewJobInputChangeHandler}
+              />
+              <label>תאריך</label>
+              <input
+                type="date"
+                value={newJobForm.date}
+                name="date"
+                onChange={NewJobInputChangeHandler}
+              />
+              <label>מיקום</label>
+              <input
+                type="text"
+                value={newJobForm.location}
+                name="location"
+                onChange={NewJobInputChangeHandler}
+              />
+              <label>(מחיר (שקל</label>
+              <input
+                type="number"
+                value={newJobForm.payment}
+                name="payment"
+                onChange={NewJobInputChangeHandler}
+              />
+              <Button disabled={loading} variant="success" type="submit">
+                {loading ? (
+                  <>
+                    שולח
+                    <span> {"    "}</span>
+                    <Spinner
+                      as="span"
+                      animation="border"
+                      size="md"
+                      role="status"
+                    />
+                  </>
+                ) : (
+                  <>פרסם עבודה</>
+                )}
+              </Button>
+            </form>
+          )}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(!showModal)}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={() => setShowModal(!showModal)}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
+      {error}
     </React.Fragment>
   );
 };

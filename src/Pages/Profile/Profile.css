@@ -88,7 +88,11 @@
   text-align: center;
   font-size: 22px;
   color: white;
-  background-color: #1e222e;
+}
+.jobSent__messageText {
+  text-align: center;
+  font-weight: bold;
+  color: "#28a745" !important;
 }
 
 @media only screen and (max-width: 576px) {

@@ -54,3 +54,13 @@ export const sentApplicationToJob = async (token, jobId) => {
     throw err;
   }
 };
+
+export const addNewJob = async (token, jobDetails) => {
+  try {
+    await Axios.post(process.env.REACT_APP_BACKEND_URL_JOBS, jobDetails, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  } catch (err) {
+    throw err;
+  }
+};
